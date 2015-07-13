@@ -1,0 +1,16 @@
+header.GlobalHeader
+  .wrapper
+    .left
+      a(href="/")
+        img.logo(src="images/logo.svg")
+      //-button.menu(role="button" data-hook="toggleNav")
+        //-span.label(data-hook="menuLabel") Menu
+        //-span.bar
+
+    .right
+      nav(role="nav").Navigation
+        ul.links
+          each nav in www.navItems
+            li.link
+              a(href=nav.href)= nav.link
+

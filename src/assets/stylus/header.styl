@@ -1,0 +1,107 @@
+.GlobalHeader
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 1
+
+  > .wrapper
+    padding: 1rem 10%
+    transform: translateY(-100%)
+    transition: transform 0.5s ease-in-out
+
+  .left
+    float: left
+
+  .right
+    float: right
+
+  .logo
+    width: 100%
+    max-width: 50px
+
+html.wf-active .GlobalHeader > .wrapper
+  transform: translateY(0)
+
+  /*
+  .menu
+    display: block
+    position: relative
+    overflow: hidden
+    width: 70px
+    //height: $menuHeight
+    appearance: none
+    border: none
+    background: transparent
+    padding: 0
+    outline: none
+
+  & .menu > .label
+    display: block
+    position: absolute
+    top: 0
+    bottom: 0
+    text-transform: uppercase
+    font-size: .625rem
+    margin: auto
+    //line-height: $menuHeight
+    right: 0
+    opacity: 0
+    transform: translateX(-2rem)
+    transition: all 0.2s ease-in-out
+    color: #888888
+    sans-serif()
+
+  & .menu:hover > .label
+    opacity: 1
+    transform: translateX(0)
+
+  & .menu > .bar, & .menu > .bar:before, & .menu > .bar:after
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    right: 45px
+    bottom: 0
+    height: 4px
+    background: #888888
+    margin: auto
+    transition: background 0.15s ease-in-out
+
+  & .menu:hover > .bar:before
+    transform: translateY(-2px)
+
+  & .menu:hover > .bar:after
+    transform: translateY(2px)
+
+  & .menu > .bar:before
+    content: ""
+    top: -14px
+    left: 0
+    right: 0
+    transition: top .25s, transform .3s .05s;
+
+  & .menu > .bar:after
+    content: ""
+    bottom: -15px
+    left: 0
+    right: 0
+    transition: bottom .25s, transform .3s .05s
+
+  & .menu.-active > .bar
+    background: none
+
+  & .menu.-active > .bar:before
+    top: 0
+    transform: rotate(45deg)
+
+  & .menu.-active > .bar:after
+    bottom: 0
+    transform: rotate(-45deg)
+
+  & .menu.-active:hover > .bar:before
+    transform: rotate(45deg) scale(0.85)
+
+  & .menu.-active:hover > .bar:after
+    transform: rotate(-45deg) scale(0.85)
+  */

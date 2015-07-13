@@ -1,0 +1,28 @@
+extends layouts/www
+
+block content
+  section.HeroSection.-blue
+    .ContentWrapper
+      h2.headline.centered.-big We are passionate designers &amp; builders
+      .btn-wrapper
+        a.btn.-main(href="/build") let&rsquo;s work together
+
+  section
+    .ContentWrapper
+      h2.headline.-big.-with-subheading All Nonsense
+      h1.subheading A digital development shop without the bullshit
+
+      :markdown
+        Unfortunately, antiquated processes, bloated organizations, and ineffective communication have permeated the industry. We believe _the process_ can be a whole lot better, and we want to do something about it.
+
+  section
+    .ContentWrapper
+      :markdown
+        ## How are we different?
+
+        We operate as lean as possible and focus intently on proper execution. This translates to savings upwards of 40% compared to the typical digital agency.
+
+        Read more about [our process](/process)
+
+block scripts
+  script(src="js/index.bundle.js")

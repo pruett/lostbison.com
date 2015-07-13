@@ -1,0 +1,42 @@
+.Navigation
+
+  & > .links
+    margin: 0
+    padding: 0
+
+  & .link
+    list-style: none
+    float: left
+
+  & .link > a
+    font-size: 0.7rem
+    font-weight: 700
+    text-transform: uppercase
+    text-decoration: none
+    transition: color 0.25s ease-in-out
+    position: relative
+    cursor: pointer
+    margin-left: 1.75rem
+    color: #fff
+    letter-spacing: .0625rem
+    padding-bottom: 0.25rem
+
+    &:after
+      content: ''
+      position: absolute
+      top: 100%
+      left: 0
+      width: 100%
+      height: 1px
+      background: #ffffff
+      opacity: 0
+      transition: all 0.3s
+      transform: scale(0)
+
+    &:hover:after
+      transform: scale(1)
+      opacity: 1
+
+  & .link:first-child > a
+    margin-left: 0
+

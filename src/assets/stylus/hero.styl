@@ -1,0 +1,32 @@
+.HeroSection
+  padding: 10rem 0
+  color: #ffffff
+  overflow: hidden
+  background-color: #DADADA
+  transition: background-color 0.3s ease-in-out
+
+  &.-contains-bg
+    position: relative
+
+.hero-bg
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  transition: all 0.35s ease-in
+
+.HeroSection.-contains-bg > .ContentWrapper
+  position: relative
+  z-index: 1
+
+.HeroSection > .ContentWrapper
+  transform: translateY(-10%)
+  visibility: hidden
+  opacity: 0
+  transition: transform 0.45s, visibility 0s, opacity 0.75s ease-in
+
+// Show content when font loads
+html.wf-active .HeroSection > .ContentWrapper
+  transform: translateY(0)
+  visibility: visible
+  opacity: 1

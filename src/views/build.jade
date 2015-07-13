@@ -1,0 +1,51 @@
+extends layouts/www
+
+block content
+  section
+    .ContentWrapper
+      h1 Let&rsquo;s build something great together!
+
+      form
+        fieldset
+          legend Tell us about yourself
+
+          .field
+            label(for="name") Full Name
+            input#name(type="text", placeholder="Full Name")
+
+          .field
+            label(for="email") Email Address
+            input#email(type="email", placeholder="Email Address")
+
+          .field
+            label(for="phone") Phone Number
+            input#phone(type="tel", placeholder="Phone Number")
+
+        fieldset
+          legend Tell us about your project
+
+          .field
+            h2 describe the project
+            label(for="describe") detail the project requirements, goals, and objectives
+            textarea#describe
+
+        fieldset
+          legend Tell us about your budget
+
+          .field
+            h2 approximate budget
+            div(data-hook="budgetRange")
+
+        input(type="submit" value="Let’s go!")
+
+block extra
+  link(href="vendor/nouislider.min.css", rel="stylesheet")
+  script(src="vendor/nouislider.min.js")
+  script.
+    noUiSlider.create(document.querySelector('[data-hook="budgetRange"]'), {
+      start: [ 10000, 20000 ],
+      range: { 'min': [ 5000 ],'max': [ 50000 ] },
+      step: 1000,
+      margin: 2000,
+      connect: true
+    });
