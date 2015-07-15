@@ -5,10 +5,6 @@ module.exports = {
     title: "title for www site",
     navItems: [
       {
-        link: 'About',
-        href: '/about'
-      },
-      {
         link: 'Process',
         href: '/process'
       },
