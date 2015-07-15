@@ -3,30 +3,43 @@
   color: #ffffff
   overflow: hidden
   background-color: #DADADA
-  transition: background-color 0.3s ease-in-out
+
+  &.-blue
+    background: #3e9dff
+    background: linear-gradient(-20deg, #3e9dff, #3c54f8 80%)
+
+  &.-bruce-lee
+    background: #000000
+    background: linear-gradient(-20deg, #7c2b2b, #000000 80%)
 
   &.-contains-bg
     position: relative
 
+    & > .ContentWrapper
+      position: relative
+      z-index: 1
+      transition: all 0.55s ease-in
+
+  & > .ContentWrapper
+    transform: translateY(-10%)
+    visibility: hidden
+    opacity: 0
+
 .hero-bg
   position: absolute
-  top: 0
+  top: 10%
   left: 0
   width: 100%
-  transition: all 0.35s ease-in
-
-.HeroSection.-contains-bg > .ContentWrapper
-  position: relative
-  z-index: 1
-
-.HeroSection > .ContentWrapper
-  transform: translateY(-10%)
-  visibility: hidden
   opacity: 0
-  transition: transform 0.45s, visibility 0s, opacity 0.75s ease-in
+  transform: scale(1.25) translateY(-100px)
+  transition: all 1.35s ease-in
 
 // Show content when font loads
 html.wf-active .HeroSection > .ContentWrapper
   transform: translateY(0)
   visibility: visible
   opacity: 1
+
+html.wf-active .HeroSection.-bruce-lee > .hero-bg
+  opacity: 0.25
+  transform: scale(1) translateY(0)

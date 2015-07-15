@@ -3,9 +3,16 @@ extends layouts/www
 block content
   section.HeroSection.-contains-bg.-bruce-lee
     .ContentWrapper
-      blockquote All fixed set patterns are incapable of adaptability or pliability. The truth is outside of all fixed patterns.
+      blockquote.headline.-big.-quote All fixed set patterns are incapable of adaptability or pliability. The truth is outside of all fixed patterns.
 
-    img.hero-bg(src="images/bruce.jpg")
+    img.hero-bg(src="images/bruce.png")
 
+  section
+    .ContentWrapper
+      :markdown
+        _Process is a difficult thing to get right_, especially when it comes to software. The solution, in our opinion, is to keep our processes light and adaptible. As each project has its own individual needs and requirements, remaining flexible has been the single most important practice we&rsquo;ve incorporated into our _process_.
+
+      h1.headline &numero;1
+      p something something
 block scripts
   script(src="js/process.bundle.js")

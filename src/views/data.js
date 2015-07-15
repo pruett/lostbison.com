@@ -25,7 +25,7 @@ module.exports = {
       {
         name: 'Kevin Pruett',
         img_src: 'images/team/kp.jpg',
-        blurb: 'I like turtles',
+        blurb: 'Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.',
         location: {
           name: 'Hoboken, NJ',
           img_src: 'images/team/hoboken.png'
@@ -34,7 +34,7 @@ module.exports = {
       {
         name: 'Matt Ortega',
         img_src: 'images/team/mo.jpg',
-        blurb: 'I like frogs',
+        blurb: 'Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.',
         location: {
           name: 'Brooklyn, NY',
           img_src: 'images/team/hoboken.png'

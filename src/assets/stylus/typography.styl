@@ -1,51 +1,4 @@
-/* Mixins */
-serif()
-  // font-weights: 400/700/400italic
-  font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif
-
-playfair()
-  // font-weights: 400/700
-  font-family: 'Playfair Display', Georgia, Times, 'Times New Roman', serif
-
-sans-serif()
-  // font-weights: 400/600/700
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, pragmatica-web, Arial, sans-serif
-
-font-smoothing()
-  -webkit-font-smoothing: antialiased
-
-legibility()
-  text-rendering: optimizeLegibility
-
-body
-  serif()
-  font-weight: 400
-  color: #646464
-  font-smoothing()
-
-h1
-  font-size: 2.75rem
-  letter-spacing: -1px
-
-h2
-  font-size: 2.125rem
-  letter-spacing: -1px
-
-h3
-  font-size: 1.75rem
-  letter-spacing: -1px
-
-h4
-  font-size: 1.25rem
-
-h5
-  font-size: 1rem
-
-h6
-  font-size: 0.85rem
-
-p
-  font-size: 1.15rem
+@import 'mixins/typography'
 
 strong
   font-weight: 700
@@ -54,29 +7,21 @@ em, i
   font-weight: 400
   font-style: italic
 
-/* Helper Classes */
-.headline
-  playfair()
-  font-weight: 400
+.labelheading
+  sans-serif()
+  color: #a3a3a3
+  font-weight: 700
+  font-size: 0.85rem
+  text-transform: uppercase
+  letter-spacing: 1px
+  margin-bottom: 2rem
 
-  &.-big
-    font-size: 3rem
-
-  &.-with-subheading
-    margin-bottom: 0
+  &.-with-dash:before
+    content: '\02014\000A0'
 
 .subheading
   sans-serif()
   font-weight: 700
-  font-size: 1.75rem
-
-.centered
-  text-align: center
-
-/* Button Typography */
-.btn.-main
-  sans-serif()
-
-/* Navigation Typography */
-.Navigation .link > a
-  sans-serif()
+  margin-bottom: 1.5rem
+  font-size: 2.55rem
+  line-height: 1

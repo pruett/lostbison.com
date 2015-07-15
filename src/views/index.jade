@@ -3,26 +3,31 @@ extends layouts/www
 block content
   section.HeroSection.-blue
     .ContentWrapper
-      h2.headline.centered.-big We are passionate designers &amp; builders
+      h1.headline.centered.-big We are passionate designers &amp; builders
       .btn-wrapper
         a.btn.-main(href="/build") let&rsquo;s work together
 
   section
     .ContentWrapper
-      h2.headline.-big.-with-subheading All Nonsense
-      h1.subheading A digital development shop without the bullshit
 
-      :markdown
-        Unfortunately, antiquated processes, bloated organizations, and ineffective communication have permeated the industry. We believe _the process_ can be a whole lot better, and we want to do something about it.
+      .TextWithHeading
+        h2.labelheading.-with-dash What we do
+        h1.subheading Design and build for the web
+        :markdown
+          Unfortunately, antiquated processes, bloated organizations, and ineffective communication have permeated the industry. We believe _the process_ can be a whole lot better, and we want to do something about it.
 
-  section
-    .ContentWrapper
-      :markdown
-        ## How are we different?
+      .TextWithHeading
+        h2.labelheading.-with-dash Who we are
+        h1.subheading A lean development shop
+        :markdown
+          Unfortunately, antiquated processes, bloated organizations, and ineffective communication have permeated the industry. We believe _the process_ can be a whole lot better, and we want to do something about it.
+      .TextWithHeading
+        h2.labelheading.-with-dash Why you should care
+        h1.subheading Quality results &mdash; fraction of the price
+        :markdown
+          We operate as lean as possible and focus intently on proper execution. This translates to savings upwards of 40% compared to the typical digital agency.
 
-        We operate as lean as possible and focus intently on proper execution. This translates to savings upwards of 40% compared to the typical digital agency.
-
-        Read more about [our process](/process)
+          Read more about [our process](/process)
 
 block scripts
   script(src="js/index.bundle.js")

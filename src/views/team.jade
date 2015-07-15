@@ -1,22 +1,19 @@
 extends layouts/www
 
 block content
-  section.introduction
-    .ContentWrapper
-      figure
-        blockquote When a team outgrows individual performance and learns team confidence, excellence becomes a reality.
-        figcaption Joe Paterno
-
   section.TeamMembers
     .ContentWrapper
-      :markdown
-        # Meet the Team.
+      h1.headline.-big.centered Meet the Team
+      p We are a team of remote builders who are passionate about building and designing digital products.
 
       ul.list
         each member in www.teamMembers
           li.member
             img.profile-pic(src="#{member.img_src}" alt="#{member.name}")
-            img.map(src="#{member.location.img_src}" alt="#{member.location.name}")
-            p.location= member.location.name
+            //-img.map(src="#{member.location.img_src}" alt="#{member.location.name}")
+            p.labelheading.location= member.location.name
             h1.name= member.name
             p.blurb= member.blurb
+
+block scripts
+  script(src="js/team.bundle.js")

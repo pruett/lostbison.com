@@ -1,0 +1,67 @@
+@import 'mixins/typography'
+
+body
+  serif()
+  font-weight: 400
+  color: #646464
+  font-smoothing()
+
+h1
+  font-size: 2.75rem
+  margin-top: 0
+
+h2
+  font-size: 2.125rem
+  margin-top: 0
+
+h3
+  font-size: 1.75rem
+  margin-top: 0
+
+h4
+  font-size: 1.25rem
+  margin-top: 0
+
+h5
+  font-size: 1rem
+  margin-top: 0
+
+h6
+  font-size: 0.85rem
+  margin-top: 0
+
+p
+  font-size: 1.15rem
+  margin-top: 0
+
+/* Helper Classes */
+.headline
+  playfair()
+  font-weight: 400
+  letter-spacing: -1px
+
+  &.-big
+    font-size: 3rem
+
+  &.-quote
+    position: relative
+    opacity: .25
+    line-height: 1.15
+
+    &:before
+      content: '\0201C'
+      position: absolute
+      top: -4.5rem
+      left: -3.5rem
+      font-size: 10rem
+
+.centered
+  text-align: center
+
+/* Button Typography */
+.btn.-main
+  sans-serif()
+
+/* Navigation Typography */
+.Navigation .link > a
+  sans-serif()
