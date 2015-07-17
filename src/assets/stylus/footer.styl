@@ -1,6 +1,35 @@
+@import 'mixins/links'
+
 .GlobalFooter
   background: #4d4d4d
   color: #fff
 
-  & > .wrapper
-    padding: 2rem 3%
+.gf-wrapper
+  padding: 2rem 3%
+
+.gf-logo
+  text-align: center
+
+.gf-logo > a
+  display: inline-block
+
+.gf-logo svg
+  width: 100%
+  max-width: 70px
+  margin: 0 auto 1rem
+  display: block
+
+.gf-links
+  margin: 0
+  padding: 0
+  text-align: center
+
+.gf-links > li
+  list-style: none
+  display: inline-block
+
+.gf-link
+  margin: 0 1rem
+  underline-link()
+  margin: 0 0.5rem
+  font-size: 0.55rem

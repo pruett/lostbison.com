@@ -1,16 +1,17 @@
-header.GlobalHeader
+header.GlobalHeader(class={ '-light-layout': layout === 'light' })
   .wrapper
     .left
       a(href="/")
-        img.logo(src="images/logo.svg")
+        .logo
+          include _logo
       //-button.menu(role="button" data-hook="toggleNav")
         //-span.label(data-hook="menuLabel") Menu
         //-span.bar
 
     .right
-      nav(role="nav").Navigation
-        ul.links
+      nav(role="nav").GlobalNavigation
+        ul.gn-links
           each nav in www.navItems
-            li.link
-              a(href=nav.href)= nav.link
+            li
+              a.gn-link._u-link-underline(href=nav.href)= nav.link
 

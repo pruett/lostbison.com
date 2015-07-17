@@ -1,9 +1,14 @@
 extends layouts/www
 
+//-
+  specify variables to be inherited by parent layout
+block vars
+  - var layout = 'light'
+
 block content
-  section
+  section.BuildProject
     .ContentWrapper
-      h1 Let&rsquo;s build something great together!
+      h1.headline.-big.centered Let&rsquo;s build something great together!
 
       form
         fieldset
@@ -36,7 +41,7 @@ block content
             h2 approximate budget
             div(data-hook="budgetRange")
 
-        input(type="submit" value="Let’s go!")
+        input(type="submit" value!="Let&rsquo;s go!")
 
 block scripts
   script(src="js/build.bundle.js")

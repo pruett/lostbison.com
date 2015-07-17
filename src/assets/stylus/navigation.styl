@@ -1,42 +1,28 @@
-.Navigation
+@import 'mixins/links'
 
-  & > .links
-    margin: 0
-    padding: 0
+.GlobalNavigation
 
-  & .link
-    list-style: none
-    float: left
+.gn-links
+  margin: 0
+  padding: 0
 
-  & .link > a
-    font-size: 0.7rem
-    font-weight: 700
-    text-transform: uppercase
-    text-decoration: none
-    transition: color 0.25s ease-in-out
-    position: relative
-    cursor: pointer
-    margin-left: 1.75rem
-    color: #fff
-    letter-spacing: .0625rem
-    padding-bottom: 0.25rem
+.gn-links > li
+  list-style: none
+  float: left
 
-    &:after
-      content: ''
-      position: absolute
-      top: 100%
-      left: 0
-      width: 100%
-      height: 1px
-      background: #ffffff
-      opacity: 0
-      transition: all 0.3s
-      transform: scale(0)
-
-    &:hover:after
-      transform: scale(1)
-      opacity: 1
+.gn-link
+  underline-link()
 
   & .link:first-child > a
     margin-left: 0
+
+.GlobalHeader.-light-layout
+  g#BisonLogo
+    fill: #646464
+
+  .gn-link
+    color: #646464
+
+    &:after
+      background: #646464
 

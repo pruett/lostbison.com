@@ -1,8 +1,14 @@
 doctype html
 html(lang="en")
+  //-
+    the `vars` block allows child views to
+    inject variables into the parent layout
+    to be handled accordingly
+  block vars
   head
     include ../partials/_head
   body
+    a(name="top")
     include ../partials/_header
     main.MainContent
       block content

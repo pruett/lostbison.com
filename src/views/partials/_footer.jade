@@ -1,6 +1,8 @@
 footer.GlobalFooter
-  .wrapper
-    ul
-      li not another agency
-      li not another agency
-      li not another
+  .gf-wrapper
+    .gf-logo
+      include _logoLarge
+    ul.gf-links
+      each nav in www.navItems
+        li
+          a.gf-link(href=nav.href)= nav.link
