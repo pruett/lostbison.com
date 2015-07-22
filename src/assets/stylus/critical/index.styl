@@ -12,10 +12,17 @@
 * and styles applied to "above the fold" content
 */
 
-@import 'reset/normalize.css'
-@import 'layout'
-@import 'critical_typography'
-@import 'header'
-@import 'navigation'
-@import 'hero'
-@import 'buttons'
+@import '../reset/normalize.css'
+@import '../layout'
+@import '../critical_typography'
+
+@import '../header'
+@import '../navigation'
+
+// Hero
+@import '../hero'
+.HeroSection.-blue
+  background: #3e9dff
+  background: linear-gradient(-20deg, #3e9dff, #3c54f8 80%)
+
+@import '../buttons'

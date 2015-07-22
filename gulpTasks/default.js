@@ -7,8 +7,6 @@ gulp.task('default', [
   //'blog:js',
   'www:images',
   //'blog:images',
-  'www:connect',
   //'blog:connect',
   //'www:vendor',
-  'watch'
 ]);

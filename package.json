@@ -5,10 +5,9 @@
   "scripts": {
     "clean": "rm -rf build/",
     "posts": "npm run clean; gulp blog:posts",
-    "start": "npm run clean; gulp",
-    "predeploy": "npm run clean; gulp production",
-    "dev": "webpack-dev-server --progress --colors",
-    "deploy": "surge -p www -d naa.surge.sh"
+    "start": "npm run clean; gulp watch",
+    "predeploy": "npm run clean; gulp",
+    "deploy": "surge -p build/www -d lostbison.surge.sh"
   },
   "author": "Kevin Pruett",
   "license": "MIT",
@@ -28,6 +27,7 @@
     "gulp-inline-source": "^2.0.0",
     "gulp-jade": "^1.0.0",
     "gulp-minify-css": "^1.0.0",
+    "gulp-minify-html": "^1.0.4",
     "gulp-postcss": "^4.0.3",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.0.1",
@@ -36,6 +36,7 @@
     "marked": "^0.3.3",
     "require-dir": "^0.1.0",
     "surge": "^0.12.0",
+    "velocity-animate": "^1.2.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0"
   }

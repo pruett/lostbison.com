@@ -1,0 +1,58 @@
+/*
+* What's considered critical?
+*
+* Critical css is inlined in the <head>
+* of the document providing critical styles
+* needed to prevent FOUC on page load
+*
+* This stylesheet is to contain the critical
+* styles that the page must first load with.
+* Generally this involves layout related styles,
+* global sweeping styles, direct element selectors,
+* and styles applied to "above the fold" content
+*/
+
+@import '../reset/normalize.css'
+@import '../layout'
+
+@import '../critical_typography'
+.headline.-quote
+  position: relative
+  opacity: .25
+  line-height: 1.15
+
+  &:before
+    content: '\0201C'
+    position: absolute
+    top: -4.5rem
+    left: -3.5rem
+    font-size: 10rem
+
+@import '../header'
+@import '../navigation'
+
+// Hero Section
+@import '../hero'
+.HeroSection
+  &.-bruce-lee
+    background: #000000
+    background: linear-gradient(-20deg, #7c2b2b, #000000 80%)
+
+  &.-contains-bg
+    position: relative
+
+    & > .ContentWrapper
+      position: relative
+      z-index: 1
+      transition: all 0.55s ease-in
+
+.hero-bg
+  position: absolute
+  top: 10%
+  left: 0
+  width: 100%
+  opacity: 0
+  transform: scale(1.25) translateY(-100px)
+  transition: all 1.35s ease-in
+
+@import '../buttons'

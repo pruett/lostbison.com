@@ -3,7 +3,7 @@ var gulp    = require('gulp'),
     jade    = require('gulp-jade');
 
 gulp.task('jade:compile', function() {
-  gulp.src(['./src/views/*.jade'])
+  return gulp.src(['./src/views/*.jade'])
     .pipe(jade({
       locals: require('../../src/views/data'),
       pretty: false
