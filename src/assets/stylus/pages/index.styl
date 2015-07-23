@@ -1,6 +1,14 @@
 .BulletPoints
   visibility: hidden
+  opacity: 0
   transform: translateY(-1rem)
+  transition: opacity .25s ease-in,transform .85s cubic-bezier(.68,-.55,.27,1.55)
+
+  &.-anim_appear
+    visibility: visible
+    opacity: 1
+    transform: translateY(0)
+
 @import '../modules/BulletPoints'
 @import '../typography'
 @import '../footer'

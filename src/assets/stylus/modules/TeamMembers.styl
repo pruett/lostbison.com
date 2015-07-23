@@ -1,0 +1,58 @@
+@import '../mixins/typography'
+
+.TeamMembers
+  padding-top: 6rem
+  transform: translateY(10%)
+  visibility: hidden
+  opacity: 0
+  transition: opacity .25s ease-in,transform 0.85s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+
+  &.-anim_appear
+    transform: translateY(0)
+    visibility: visible
+    opacity: 1
+
+  .list
+    margin: 0
+    padding: 0
+
+  .member
+    list-style: none
+    border-bottom: 1px solid #e7e7e7
+    padding: 2rem 0
+
+    &:last-child
+      border-bottom: none
+
+  .profile-pic
+    max-width: 350px
+    margin: 0 auto 1rem
+    display: block
+    border-radius: 50%
+    width: 65%
+    visibility: hidden
+    opacity: 0
+    transform: scale(0.35)
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+
+    &.-anim_appear
+      visibility: visible
+      opacity: 1
+      transform: scale(1)
+
+  .location
+    margin-bottom: 0.5rem
+
+  .name
+    sans-serif()
+    letter-spacing: -1px
+    position: relative
+    margin-bottom: 3rem
+
+    &:after
+      content: '\02015'
+      position: absolute
+      left: 0
+      bottom: -2rem
+      font-size: 1rem
+

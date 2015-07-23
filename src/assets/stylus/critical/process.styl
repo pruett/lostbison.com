@@ -18,8 +18,10 @@
 @import '../critical_typography'
 .headline.-quote
   position: relative
-  opacity: .25
+  opacity: 1
   line-height: 1.15
+  color: #646464
+  color: rgba(#646464, 0.6)
 
   &:before
     content: '\0201C'
@@ -27,6 +29,7 @@
     top: -4.5rem
     left: -3.5rem
     font-size: 10rem
+    font-family: sans-serif
 
 @import '../header'
 @import '../navigation'
@@ -36,7 +39,7 @@
 .HeroSection
   &.-bruce-lee
     background: #000000
-    background: linear-gradient(-20deg, #7c2b2b, #000000 80%)
+    background: linear-gradient(-20deg, #808080, #E6E6E6 80%)
 
   &.-contains-bg
     position: relative
@@ -44,7 +47,6 @@
     & > .ContentWrapper
       position: relative
       z-index: 1
-      transition: all 0.55s ease-in
 
 .hero-bg
   position: absolute
@@ -53,6 +55,10 @@
   width: 100%
   opacity: 0
   transform: scale(1.25) translateY(-100px)
-  transition: all 1.35s ease-in
+  transition: opacity 0.45s, transform 0.85s cubic-bezier(0.65, 0.05, 0.36, 1)
+
+  &.-anim_appear
+    opacity: 0.4
+    transform: scale(1) translateY(0)
 
 @import '../buttons'

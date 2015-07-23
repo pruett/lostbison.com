@@ -2,10 +2,11 @@ extends layouts/www
 
 block vars
   - var namespace = 'process'
+  - var layout = 'light'
 
 block content
-  section.HeroSection.-contains-bg.-bruce-lee
-    .ContentWrapper
+  section.HeroSection.-contains-bg.-bruce-lee(data-hook="getBruceLee")
+    .ContentWrapper(data-hook="getHeroContent")
       blockquote.headline.-big.-quote All fixed set patterns are incapable of adaptability or pliability. The truth is outside of all fixed patterns.
 
     img.hero-bg(src="images/bruce.png")
@@ -13,14 +14,14 @@ block content
   section
     .ContentWrapper
       p
-        h1.standout Process is a difficult thing to get right
+        em Process is a difficult thing to get right
         |, especially when it comes to software. The solution, in our opinion, is to keep as much of our process light and flexible. As each project has its own individual needs and requirements, remaining adaptable has been the single most important practice we&rsquo;ve incorporated into our process.
 
       p Instead of establishing one set structure, &ldquo;one true way&rdquo; we prefer working with the needs and wants of a particular project. We&rsquo;ve found this approach to yeild the best results.
 
       p This does not mean, however, that we don&rsquo;t hold certain beliefs:
 
-      .BulletPoints
+      .BulletPoints(data-hook="getBulletPoints")
 
         ul.bp_bullets
 

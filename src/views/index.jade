@@ -5,14 +5,14 @@ block vars
 
 block content
   section.HeroSection.-blue
-    .ContentWrapper
+    .ContentWrapper(data-hook="getHeroContent")
       h1.headline.-big.centered We are passionate designers &amp; builders
       .btn-wrapper
         a.btn.-main(href="/build") let&rsquo;s work together
 
   section
     .ContentWrapper
-      .BulletPoints
+      .BulletPoints(data-hook="getBulletPoints")
 
         ul.bp_bullets
 
