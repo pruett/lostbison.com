@@ -12,43 +12,74 @@ block content
 
   section
     .ContentWrapper
-      p
-        em Process is a difficult thing to get right
-        |, especially when it comes to software. The solution, in our opinion, is to keep as much of our process light and flexible. As each project has its own individual needs and requirements, remaining adaptable has been the single most important practice we&rsquo;ve incorporated into our process.
+      p.
+        As much as we&rsquo;d like to codify a formal process for handling work; in our experience, there is not &ldquo;one true way&rdquo;. We recognize that requirements, scope of work, and overall goals, vary from project to project. In order to account for these variables, we remain flexible and adapt to the specific needs of the work.
 
-      p Instead of establishing one set structure, &ldquo;one true way&rdquo; we prefer working with the needs and wants of a particular project. We&rsquo;ve found this approach to yeild the best results.
-
-      p This does not mean, however, that we don&rsquo;t hold certain beliefs:
+      p.
+        We do, however, embrace a few principles:
 
       .BulletPoints(data-hook="getBulletPoints")
 
         ul.bp_bullets
 
+          a(name="constraints")
           li.bp_bullet.-with-enumeration
             .bp_index &numero; 1.
-            h2.bp_title Paper &amp; pencil are wonderous tools&hellip;
+            h2.bp_title Embrace constraints
 
-            p As much as we&rsquo;d love to automate and digitize certain processes, there doesn&rsquo;t seem to be a digitial equivalent to putting pencil to paper. This is typically the first step we take in any project. Whether mocking up layout, or dabblig with branding concepts, odds are it starts with a physical paper prototype.
+            p We believe that constraints are a good thing. They guide us towards an objective solution. In our case, we embrace the constraints of our medium &mdash; the web. We understand its strengths and weaknesses. This helps us deliver the best end result.
 
+            blockquote.twitter-tweet(lang="en")
+              p(lang="en" dir="ltr")
+                Constraints are fascinating. &#10;&#10;They force creativity.
+              |&mdash; Henrik Joreteg (@HenrikJoreteg)
+              a(href="https://twitter.com/HenrikJoreteg/status/624462761611825152") July 24, 2015
+            script(async src="//platform.twitter.com/widgets.js" charset="utf-8")
+
+            p.
+              What happens when fundamental constraints are not respected? <a class="-general" href="http://www.frankchimero.com/">Frank Chimero</a> does a fantastic job speaking to these consequences in his piece entitled <a class="-general" href="http://www.frankchimero.com/writing/the-webs-grain/"><em>The Web&rsquo;s Grain</em></a>:
+            blockquote.citation
+              p.
+                &ldquo;Listen bub,&rdquo; I say, &ldquo;it is very impressive that you can teach a bear to ride a bicycle, and it is fascinating and novel. But perhaps it’s cruel? Because that’s not what bears are supposed to do. And look, pal, that bear will never actually be good at riding a bicycle.&rdquo;
+
+              p.
+                This is how I feel about so many of the fancy websites I see. &ldquo;It is fascinating that you can do that, but it’s really not what a website is supposed to do.&rdquo;
+
+              p.
+                &hellip;
+
+              p.
+                Most of the solidified techniques about our practice come from the natural ways of the web that have been there since the start. The answer is right there in front of us, in the website itself, and each step we take away from its intentions makes our creations weaker.
+
+              p.
+                The web is forcing our hands. And this is fine! Many sites will share design solutions, because we&rsquo;re using the same materials. The consistencies establish best practices; they are proof of design patterns that play off of the needs of a common medium, and not evidence of a visual monoculture.
+
+          a(name="code")
           li.bp_bullet.-with-enumeration
             .bp_index &numero; 2.
-            h2.bp_title &hellip;but bothing beats the real thing!
+            h2.bp_title
+              code.code-headline return $CODE;
+              |&nbsp;not comps
 
-            p Despite our love for paper and pencil and the benefits it brings to protoyping, it also has one major disadvantage. [Talk about getting to web as soon as possible, and to get the client testing natively asap]
+            p.
+              Somewhere along the way, the term &ldquo;pixel perfect&rdquo; infected the design community. What followed was a focus on static deliverables that were highly polished but severely brittle. How can we expect a static composition to represent our interfaces when the web itself <strong>is not static</strong>? There is simply no way to account for its variability with static pixels.
 
+            p.
+              We prefer to get to code as quickly as possible and continue the process of prototyping from there. Seeing the interface &ldquo;in the wild&rdquo; with native functionality allows us to make better decisions compared to evaluating it on a motionless canvas.
+
+          a(name="performance")
           li.bp_bullet.-with-enumeration
             .bp_index &numero; 3.
-            h2.bp_title
-              code return $CODE;
-              |&nbsp;over static compositions
+            h2.bp_title Performance matters
 
-            p There's only so much a rasterized composition can tell you. Typically, it provides an unrealistic depiction of an interface with fake data. Highly innefective given the dynamism of the web. Long gone are the days of web designers who live striclty in Photoshop.
+            p.
+              Performance is perhaps the single most important component of a quality user experience. Countless studies conclude that slow performance leads to reduction in conversions. Essentially, the longer it takes your website to load, the more traffic you’ll lose as a result.
 
-          li.bp_bullet.-with-enumeration
-            .bp_index &numero; 4.
-            h2.bp_title Performance is not a feature, it&rsquo;s a requirement
+            p.
+              With the proliferation of mobile devices and tablets, performance has become even more important. With connectivity instability and less computing power, these devices in particular require performance-driven engineering to maintain fast render times. Unfortunately, performance is often overlooked as a priority.
 
-            p [talk about the importance of performance with the proliferation of mobile devices and sucky designers]
+            p.
+              We prioritize performance from the very beginning. Given our propensity to <a class="-general" href="#code">deliver live code</a> early in the lifecycle of a project, we have an advantage that many do not. We are able to assess potential bottlenecks and solve those problems early, before the project takes its final shape.
 
 block scripts
   script(src="js/process.bundle.js")
