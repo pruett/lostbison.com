@@ -36,6 +36,7 @@
     "jade": "^1.9.2",
     "marked": "^0.3.3",
     "nouislider": "leongersen/noUiSlider",
+    "postmark": "^1.0.0",
     "require-dir": "^0.1.0",
     "surge": "^0.12.0",
     "velocity-animate": "^1.2.2",

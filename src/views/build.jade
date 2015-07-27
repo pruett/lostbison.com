@@ -35,8 +35,13 @@ block content
         fieldset
           legend.bp-section-title Budget
 
+          .bp-budget-group
+            .bp-budget.-from(data-hook="budgetFrom") $10,000
+            span &nbsp;&mdash;&nbsp;
+            .bp-budget.-to(data-hook="budgetTo") $20,000
+
           .bp-field
-            .bp-label what are you looking to spend?
+            //-.bp-label what are you looking to spend?
             div(data-hook="budgetRange")
 
         input(type="submit" value!="Let&rsquo;s do it!")
