@@ -5,8 +5,8 @@ module.exports = {
     title: "title for www site",
     navItems: [
       {
-        link: 'Process',
-        href: '/process'
+        link: 'Philosophy',
+        href: '/philosophy'
       },
       {
         link: 'Team',
@@ -21,20 +21,18 @@ module.exports = {
       {
         name: 'Kevin Pruett',
         img_src: 'images/team/kp.jpg',
-        blurb: 'Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.',
-        location: {
-          name: 'Hoboken, NJ',
-          img_src: 'images/team/hoboken.png'
-        }
+        blurb: 'This is a blurb about me',
+        role: 'developer/designer',
+        location: 'Hoboken, NJ',
+        links: ['http://kevinpruett.com', 'https://twitter.com/pruett']
       },
       {
         name: 'Matt Ortega',
         img_src: 'images/team/mo.jpg',
         blurb: 'Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.',
-        location: {
-          name: 'Brooklyn, NY',
-          img_src: 'images/team/hoboken.png'
-        }
+        role: 'designer/front-end developer',
+        location: 'Brooklyn, NY',
+        links: ['http://matthewortega.co', 'https://twitter.com/matt0rtega']
       }
     ]
   },

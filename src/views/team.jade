@@ -8,15 +8,21 @@ block content
   section.TeamMembers(data-hook="getTeamContent")
     .ContentWrapper
       h1.headline.-big.centered Meet the Team
-      p We are a team of remote builders who are passionate about building and designing digital products.
+      p.centered We are a remote team of builders passionate about quality design and engineering.
 
       ul.list
         each member in www.teamMembers
           li.member
             img.profile-pic(src="#{member.img_src}" alt="#{member.name}")
-            //-img.map(src="#{member.location.img_src}" alt="#{member.location.name}")
-            p.labelheading.location= member.location.name
+            p.labelheading.location= member.location
             h1.name= member.name
+            h2.role= member.role
+
+            ul.links
+              each link in member.links
+                li.link
+                  a.-general(href=link)= link
+
             p.blurb= member.blurb
 
 block scripts
