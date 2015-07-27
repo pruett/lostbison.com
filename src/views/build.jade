@@ -15,31 +15,31 @@ block content
 
           .bp-field
             label.bp-label(for="name") Full Name
-            input#name.bp-textfield(type="text", placeholder="Full Name")
+            input#name.bp-textfield(type="text", placeholder="Jane Doe")
 
           .bp-field
             label.bp-label(for="email") Email Address
-            input#email.bp-textfield(type="email", placeholder="Email Address")
+            input#email.bp-textfield(type="email", placeholder="janedoe@website.com")
 
           .bp-field
             label.bp-label(for="phone") Phone Number
-            input#phone.bp-textfield(type="tel", placeholder="Phone Number")
+            input#phone.bp-textfield(type="tel", placeholder="(123) 456-7890")
 
         fieldset
           legend.bp-section-title Tell us about your project
 
           .bp-field
-            label.bp-label(for="describe") detail the project requirements, goals, and objectives
+            label.bp-label(for="describe") detail project requirements, goals, and objectives
             textarea#describe.bp-textarea
 
         fieldset
-          legend.bp-label Tell us about your budget
+          legend.bp-section-title Budget
 
           .bp-field
-            h2.bp-label approximate budget
+            .bp-label what are you looking to spend?
             div(data-hook="budgetRange")
 
-        input(type="submit" value!="Let&rsquo;s go!")
+        input(type="submit" value!="Let&rsquo;s do it!")
 
 block scripts
   script(src="js/build.bundle.js")

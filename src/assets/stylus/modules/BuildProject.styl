@@ -1,0 +1,40 @@
+@import '../mixins/typography'
+
+.BuildProject
+  padding-top: 6rem
+
+.bp-section-title
+  playfair()
+  font-size: 1.75rem
+  margin-bottom: 1rem
+  width: 100%
+
+.bp-field
+  margin: 1rem 0
+
+.bp-label
+  display: block
+  sans-serif()
+  font-size: 0.85rem
+  text-transform: uppercase
+  letter-spacing: 1px
+  margin-bottom: 0.5rem
+
+.bp-textfield, .bp-textarea
+  padding: 0.5rem
+  outline: none
+  border: none
+  border-bottom: 1px solid #CCC
+  transition: border 0.25s ease-in-out
+  width: 100%
+  min-width: 320px
+
+  &:focus
+    border-bottom: 1px solid #396FCC
+
+.bp-textarea
+  height: 10rem
+  border: 1px solid #CCC
+
+  &:focus
+    border: 1px solid #396FCC
