@@ -27,7 +27,7 @@ gulp.task('www:js', function(done) {
         extname: '.bundle.js'
       }))
       .pipe(buffer())
-      .pipe(uglify())
+      //.pipe(uglify())
       .pipe(gulp.dest('./build/www'));
     });
     es.merge(tasks).on('end', done);

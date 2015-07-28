@@ -1,13 +1,30 @@
 @import '../mixins/typography'
+@import '../mixins/layout'
+@import '../buttons'
 
 .BuildProject
   padding-top: 6rem
+  visibility: hidden
+  opacity: 0
+  transform: translateY(3rem)
+  transition: opacity .25s ease-in,transform 0.85s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+
+  &.-anim_appear
+    visibility: visible
+    opacity: 1
+    transform: translateY(0)
+
+  form
+    group()
 
 .bp-section-title
   playfair()
   font-size: 1.75rem
   margin-bottom: 1rem
   width: 100%
+
+  &.-tight
+    margin-bottom: 0
 
 .bp-field
   margin: 1rem 0
@@ -27,6 +44,7 @@
   border-bottom: 1px solid #CCC
   transition: border 0.25s ease-in-out
   width: 100%
+  box-sizing: border-box
   min-width: 320px
 
   &:focus
@@ -38,3 +56,24 @@
 
   &:focus
     border: 1px solid #396FCC
+
+.bp-budget-group
+  margin-bottom: 1rem
+
+.bp-budget
+  display: inline
+  sans-serif()
+  font-weight: 700
+  font-size: 1.65rem
+  color: #70A770
+
+.bp-budget-slider
+  margin-bottom: 2rem
+
+.bp-submit
+  border: 1px solid #ccc
+  background: none
+  outline: none
+
+  &:hover
+    background: #FFF8F8
