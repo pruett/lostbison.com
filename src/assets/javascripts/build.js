@@ -8,10 +8,10 @@ const budgetRange = document.querySelector('[data-hook="budgetRange"]');
 const budgetFrom = document.querySelector('[data-hook="budgetFrom"]');
 const budgetTo = document.querySelector('[data-hook="budgetTo"]');
 const projectForm = document.querySelector('form');
+const submitBtn = document.querySelector('input[type="submit"]');
 
-import serializ from 'form-serialize';
-import postmark from 'postmark';
-//let postmarkClient = new postmark.Client("f0b1bad4-6a86-426c-80af-8e21cbf9807c");
+import serialize from 'form-serialize';
+import 'whatwg-fetch';
 
 const animateElements = function() {
   requestAnimationFrame(() => utils.addClass(header, '-anim_appear'));
@@ -43,32 +43,55 @@ budgetRange.noUiSlider.on('update', function(values) {
   return false;
 });
 
+let toggleBtnState = function(state = 'disable') {
+  if (state === 'disable') {
+    submitBtn.setAttribute('disabled', 'disabled');
+    submitBtn.value = "Sending...";
+  } else {
+    submitBtn.removeAttribute('disabled');
+    submitBtn.value = "Let&rsquo;s build this thing!";
+  }
+  return false;
+};
+
+
+let checkStatus = function(res) {
+  if (res.status >= 299 && res.status < 300) {
+    return res;
+  } else {
+    let error = new Error(res.status);
+    error.response = res;
+    throw error;
+  }
+};
+
+let postProposal = function(data) {
+  fetch('http://lostbison.herokuapp.com/proposal', {
+    method: 'post',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(checkStatus)
+    .then(() => toggleBtnState('on'))
+    .catch(function(error) {
+      if (error.response.status >= 400 && error.response.status < 500) {
+        console.log('fill in fields');
+      } else {
+        console.log('server error');
+      }
+    })
+};
+
 let submitProject = function(e) {
   e.preventDefault();
-
   let formValues = serialize(projectForm, { hash: true });
   formValues.budget = budgetRange.noUiSlider.get();
 
-  console.log(formValues);
-
-  //postmarkClient.sendEmail({
-    //"From": "donotreply@example.com",
-    //"To": "pruett.kevin@gmail.com",
-    //"Subject": `Project proposal for ${formValues.budget[0]} - ${formValues.budget[1]}`,
-    //"TextBody": `
-      //Name: ${formValues.fullName}\n
-      //Email: ${formValues.email}\n
-      //Phone Number: ${formValues.phone}\n
-      //Project Details: ${formValues.projectDetails}\n
-      //Budget: ${formValues.budget[0]} - ${formValues.budget[1]}
-    //`
-  //}, function(error, success) {
-    //if(error) {
-      //console.error("Unable to send: " + error.message);
-      //return;
-    //}
-    //console.info("Delivered!")
-  //});
+  toggleBtnState();
+  postProposal(formValues);
 
   return false;
 }

@@ -74,6 +74,21 @@
   border: 1px solid #ccc
   background: none
   outline: none
+  box-shadow: 0px 3px 0 -1px #ccc
+  position: relative
+  border-radius: 8px
+  transition: all 0.25s ease-in-out
 
   &:hover
-    background: #FFF8F8
+    background: #FBFBFB
+
+  &:active, &[disabled="disabled"]
+    transform: translateY(2px)
+    box-shadow: none
+
+
+  &[disabled="disabled"]
+    color: #b1b1b1
+
+    &:hover
+      background: none
