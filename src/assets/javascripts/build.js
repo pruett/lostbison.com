@@ -9,6 +9,7 @@ const budgetFrom = document.querySelector('[data-hook="budgetFrom"]');
 const budgetTo = document.querySelector('[data-hook="budgetTo"]');
 const projectForm = document.querySelector('form');
 const submitBtn = document.querySelector('input[type="submit"]');
+const flashMsg = document.querySelector('[data-hook="getFlashMessage"]');
 
 import serialize from 'form-serialize';
 import 'whatwg-fetch';
@@ -35,31 +36,51 @@ noUiSlider.create(budgetRange, {
   }
 });
 
-setTimeout(() => requestAnimationFrame(animateElements), 500);
-
 budgetRange.noUiSlider.on('update', function(values) {
-  budgetFrom.innerText = values[0];
-  budgetTo.innerText = values[1] === "$50,000" ? "$50,000+" : values[1];
+  budgetFrom.innerHTML = values[0];
+  budgetTo.innerHTML = values[1] === "$50,000" ? "$50,000+" : values[1];
   return false;
 });
 
-let toggleBtnState = function(state = 'disable') {
-  if (state === 'disable') {
-    submitBtn.setAttribute('disabled', 'disabled');
-    submitBtn.value = "Sending...";
-  } else {
-    submitBtn.removeAttribute('disabled');
-    submitBtn.value = "Let&rsquo;s build this thing!";
-  }
+setTimeout(() => requestAnimationFrame(animateElements), 500);
+
+let setBtnState = function({msg = 'sending...', state = 'disabled'} = {}) {
+  state === 'disabled' ? submitBtn.setAttribute('disabled', 'disabled')
+                       : submitBtn.removeAttribute('disabled');
+
+  submitBtn.value = msg;
   return false;
 };
 
+let showMessage = function(res) {
+
+  if (res.status < 300) {
+    console.info('Thanks for your submission! An automated email will be sent to your inboxshortly');
+    flashMsg.innerHTML = "Your submission has been sent!<br>You&rsquo;ll receive an automated email in your inbox shortly."
+    requestAnimationFrame(() => utils.removeClass(flashMsg, '-error'));
+    requestAnimationFrame(() => utils.addClass(flashMsg, '-anim_appear'));
+    projectForm.reset();
+    return;
+  }
+
+  if (res.status > 399 && res.status < 500) {
+    utils.addClass(flashMsg, '-error');
+    flashMsg.innerHTML = "Oh no! Please make sure all fields are filled in.";
+    requestAnimationFrame(() => utils.addClass(flashMsg, '-anim_appear'));
+    setBtnState({ msg: 'Submit', state: 'on' });
+  } else {
+    utils.addClass(flashMsg, 'error');
+    flashMsg.innerHTML = "Whoops! There seems to be a server error.<br>Please contact us if the problem persists.";
+    requestAnimationFrame(() => utils.addClass(flashMsg, '-anim_appear'));
+    setBtnState({ msg: 'Submit', state: 'on' });
+  }
+};
 
 let checkStatus = function(res) {
-  if (res.status >= 299 && res.status < 300) {
+  if (res.status < 300) {
     return res;
   } else {
-    let error = new Error(res.status);
+    let error = new Error(res.statusText);
     error.response = res;
     throw error;
   }
@@ -75,13 +96,10 @@ let postProposal = function(data) {
     body: JSON.stringify(data)
   })
     .then(checkStatus)
-    .then(() => toggleBtnState('on'))
+    .then((res) => showMessage(res))
+    .then(() => setBtnState({ msg: 'sent!' }))
     .catch(function(error) {
-      if (error.response.status >= 400 && error.response.status < 500) {
-        console.log('fill in fields');
-      } else {
-        console.log('server error');
-      }
+      showMessage(error.response)
     })
 };
 
@@ -90,7 +108,8 @@ let submitProject = function(e) {
   let formValues = serialize(projectForm, { hash: true });
   formValues.budget = budgetRange.noUiSlider.get();
 
-  toggleBtnState();
+  utils.removeClass(flashMsg, '-anim_appear');
+  setBtnState();
   postProposal(formValues);
 
   return false;

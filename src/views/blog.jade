@@ -1,0 +1,14 @@
+extends layouts/www
+
+block vars
+  - var namespace = 'blog'
+  - var layout = 'light'
+
+block content
+  section.BlogSection(data-hook="getMainContent")
+    .ContentWrapper
+      h1.headline.-big.centered Coming soon...
+      p.centered We&rsquo;re busy writing some super stuff right now!
+
+block scripts
+  script(src="js/blog.bundle.js")

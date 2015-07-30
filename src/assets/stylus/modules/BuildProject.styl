@@ -1,9 +1,8 @@
 @import '../mixins/typography'
 @import '../mixins/layout'
-@import '../buttons'
 
 .BuildProject
-  padding-top: 6rem
+  padding-top: 10rem
   visibility: hidden
   opacity: 0
   transform: translateY(3rem)
@@ -16,6 +15,9 @@
 
   form
     group()
+
+  .headline
+    margin-bottom: 5rem
 
 .bp-section-title
   playfair()
@@ -70,25 +72,56 @@
 .bp-budget-slider
   margin-bottom: 2rem
 
+.btn-wrapper
+  width: 100%
+  text-align: center
+
 .bp-submit
-  border: 1px solid #ccc
-  background: none
+  border: none
   outline: none
-  box-shadow: 0px 3px 0 -1px #ccc
+  padding: 1rem 2rem
   position: relative
   border-radius: 8px
   transition: all 0.25s ease-in-out
-
-  &:hover
-    background: #FBFBFB
-
-  &:active, &[disabled="disabled"]
-    transform: translateY(2px)
-    box-shadow: none
-
+  color: #fff
+  sans-serif()
+  text-transform: uppercase
+  letter-spacing: 2px
+  font-size: 0.85rem
+  background: #639AC5
 
   &[disabled="disabled"]
+    background: #ececec
     color: #b1b1b1
+    cursor: not-allowed
 
-    &:hover
-      background: none
+.bp-flash-message
+  background-color: #7ABD7A
+  padding: 1rem
+  border-radius: 4px
+  margin-top: 1.5rem
+  text-align: center
+  color: #fff
+  visibility: hidden
+  opacity: 0
+  transform: translateX(200%)
+  transition: all .85s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+
+  &.-error
+    background-color: #D23521
+
+  &.-anim_appear
+    visibility: visible
+    opacity: 1
+    transform: translateX(0)
+
+//.btn
+  //sans-serif()
+  //display: inline-block
+  //padding: 1rem 1.5rem
+  //text-align: center
+  //text-transform: uppercase
+  //font-size: 0.75rem
+  //font-weight: 600
+  //letter-spacing: 2px
+  //text-decoration: none

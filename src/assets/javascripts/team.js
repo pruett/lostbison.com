@@ -4,7 +4,6 @@ import imagesLoaded from 'imagesloaded';
 
 const header = document.querySelector('[data-hook="getHeader"]');
 const teamContent = document.querySelector('[data-hook="getTeamContent"]');
-//const bruceLee = document.querySelector('[data-hook="getBruceLee"]');
 
 const animateElements = function() {
   requestAnimationFrame(() => utils.addClass(header, '-anim_appear'));

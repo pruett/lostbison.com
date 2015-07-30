@@ -1,17 +1,16 @@
 header.GlobalHeader(data-hook='getHeader', class={ '-light-layout': layout === 'light' })
   .wrapper
-    .left
-      a(href="/")
-        .logo
-          include _logo
-      //-button.menu(role="button" data-hook="toggleNav")
-        //-span.label(data-hook="menuLabel") Menu
-        //-span.bar
-
-    .right
-      nav(role="nav").GlobalNavigation
-        ul.gn-links
-          each nav in www.navItems
-            li
+    nav(role="nav").GlobalNavigation
+      ul.gn-links
+        each nav, index in www.navItems
+          if (index === 2)
+            li.gn-home-shield
+              a.gn-link.-main(href="/")
+                include _logo
+                h1.gn-name lostbison
+            li.gn-page
+              a.gn-link._u-link-underline(href=nav.href)= nav.link
+          else
+            li.gn-page
               a.gn-link._u-link-underline(href=nav.href)= nav.link
 

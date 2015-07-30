@@ -25,4 +25,28 @@
   background: #3e9dff
   background: linear-gradient(-20deg, #4F00BC, #29ABE2 80%)
 
-@import '../buttons'
+@import '../mixins/typography'
+.btn-wrapper
+  width: 100%
+  text-align: center
+
+.btn
+  sans-serif()
+  display: inline-block
+  padding: 1rem 1.5rem
+  text-align: center
+  text-transform: uppercase
+  font-size: 0.75rem
+  font-weight: 600
+  letter-spacing: 2px
+  text-decoration: none
+
+.btn.-main
+  border-radius: 0.5rem
+  color: #fff
+  transform: scale(1)
+  transition: transform .2s cubic-bezier(0.46, 0.03, 0.52, 0.96)
+  border: 2px solid #fff
+
+  &:hover
+    transform: scale(1.05)
