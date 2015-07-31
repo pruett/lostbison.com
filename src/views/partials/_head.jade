@@ -42,3 +42,18 @@ script#loadcss.
   loadCSS("css/#{namespace}.css", document.getElementById('loadcss'));
 noscript
   link(href="css/#{namespace}.css" rel="stylesheet")
+
+each favicon in www.favicons
+  link(href="images/favicons/favicon-#{favicon}.png" rel='icon' sizes=favicon type='image/png')
+
+//-<meta content='Kevin Pruett | Designer &amp; Developer' property='og:title'>
+//-<meta content='http://kevinpruett.com' property='og:url'>
+//-<meta content='website' property='og:type'>
+//-<meta content='I&amp;rsquo;m a designer &amp;amp; builder &amp;mdash; passionate about creating simple &amp;amp; powerful interfaces, tools, and experiences through clean design &amp;amp; code.' property='og:description'>
+//-<meta content='http://kevinpruett.com/img/snow_bison.jpg' property='og:image'>
+//-<meta content='summary_large_image' name='twitter:card'>
+//-<meta content='@pruett' name='twitter:site'>
+//-<meta content='@pruett' name='twitter:creator'>
+//-<meta content='Kevin Pruett | Designer &amp; Developer' name='twitter:title'>
+//-<meta content='I&amp;rsquo;m a designer &amp;amp; builder &amp;mdash; passionate about creating simple &amp;amp; powerful interfaces, tools, and experiences through clean design &amp;amp; code.' name='twitter:description'>
+//-<meta content='http://kevinpruett.com/img/snow_bison.jpg' name='twitter:image:src'>

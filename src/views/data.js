@@ -1,4 +1,6 @@
 module.exports = {
+  // Website data
+
   www: {
     description: "Lost Bison is a collective of digital design and development experts",
     author: "Kevin Pruett",
@@ -38,8 +40,17 @@ module.exports = {
         //location: 'Brooklyn, NY',
         //links: ['http://matthewortega.co', 'https://twitter.com/matt0rtega']
       //}
+    ],
+    favicons: [
+      '192x192',
+      '160x160',
+      '96x96',
+      '16x16',
+      '32x32'
     ]
   },
+
+  //Blog data
 
   blog: {
     description: "blog desc",

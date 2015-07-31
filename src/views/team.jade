@@ -7,7 +7,7 @@ block vars
 block content
   section.TeamMembers(data-hook="getTeamContent")
     .ContentWrapper
-      h1.headline.-big.centered Meet the Team
+      h2.headline.-big.centered Meet the Team
       p.centered We are a remote team of builders passionate about quality design and engineering.
 
       ul.list
@@ -15,8 +15,8 @@ block content
           li.member
             img.profile-pic(src="#{member.img_src}" alt="#{member.name}")
             p.labelheading.location= member.location
-            h1.name= member.name
-            h2.role= member.role
+            h3.name= member.name
+            h4.role= member.role
 
             ul.links
               each link in member.links
