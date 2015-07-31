@@ -6,6 +6,7 @@ gulp.task('default', [
   'www:js',
   //'blog:js',
   'www:images',
+  'www:files'
   //'blog:images',
   //'blog:connect',
   //'www:vendor',

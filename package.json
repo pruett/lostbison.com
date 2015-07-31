@@ -7,7 +7,7 @@
     "posts": "npm run clean; gulp blog:posts",
     "start": "npm run clean; gulp watch",
     "predeploy": "npm run clean; gulp",
-    "deploy": "surge -p build/www -d lostbison.surge.sh"
+    "deploy": "surge -p build/www"
   },
   "author": "Kevin Pruett",
   "license": "MIT",
