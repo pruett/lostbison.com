@@ -27,7 +27,7 @@ module.exports = {
       {
         name: 'Kevin Pruett',
         img_src: 'images/team/kp.jpg',
-        blurb: 'Struggles with writing autobiographical blurbs. Has regrettably never seen a bison in person. Has a dog/best friend named Tatanka. Aspiring drummer. Does not own a motorcycle with a sidecar...<em>yet</em>. Wishes he had a one-handed backhand like Federer. Wasn&rsquo;t sure whether to write this in the third-person or not.',
+        blurb: 'Struggles with writing autobiographical blurbs. Has regrettably never seen a bison in person. Has a dog/best friend named Tatanka. Aspiring drummer. Does not own a motorcycle with a sidecar...<em>yet</em>. Wishes he had a one-handed backhand like Federer. Wasn&rsquo;t sure whether or not to write this in the third-person.',
         role: 'developer/designer',
         location: 'Hoboken, NJ',
         links: ['http://kevinpruett.com', 'https://github.com/pruett', 'https://twitter.com/pruett']
