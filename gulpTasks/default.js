@@ -1,13 +1,16 @@
 var gulp  = require('gulp');
 
-gulp.task('default', [
+gulp.task('www', [
   'www:stylus', // this task compiles jade first
-  //'blog:stylus',
   'www:js',
-  //'blog:js',
   'www:images',
   'www:files'
-  //'blog:images',
-  //'blog:connect',
-  //'www:vendor',
+]);
+
+gulp.task('blog', [
+  'blog:stylus',
+  'blog:js',
+  'blog:images',
+  'blog:connect',
+  'blog:files'
 ]);

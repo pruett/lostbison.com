@@ -2,7 +2,7 @@ header.GlobalHeader(data-hook='getHeader', class={ '-light-layout': layout === '
   .wrapper
     nav(role="nav").GlobalNavigation
       ul.gn-links
-        each nav, index in www.navItems
+        each nav, index in navItems
           if (index === 2)
             li.gn-home-shield
               a.gn-link.-main(href="/")

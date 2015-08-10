@@ -1,0 +1,16 @@
+header.GlobalHeader(data-hook='getHeader', class={ '-light-layout': layout === 'light' })
+  .wrapper
+    nav(role="nav").GlobalNavigation
+      ul.gn-links
+        each nav, index in navItems
+          if (index === 2)
+            li.gn-home-shield
+              a.gn-link.-main(href="http://lostbison.com")
+                include _logo
+                h1.gn-name lost bison
+            li.gn-page
+              a.gn-link._u-link-underline(href=nav.href)= nav.link
+          else
+            li.gn-page
+              a.gn-link._u-link-underline(href=nav.href)= nav.link
+

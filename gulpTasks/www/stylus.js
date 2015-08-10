@@ -7,35 +7,35 @@ var gulp         = require('gulp'),
     inlinesource = require('gulp-inline-source'),
     connect      = require('gulp-connect');
 
-gulp.task('stylus:compile:critical', function () {
-  return gulp.src(['./src/assets/stylus/critical/*.styl'])
+gulp.task('www:stylus:compile:critical', function () {
+  return gulp.src(['./src/www/assets/stylus/critical/*.styl'])
     .pipe(stylus({ 'include css': true }))
     .pipe(gulp.dest('./build/www/css/critical/'));
 });
 
-gulp.task('stylus:compile:pages', function () {
-  return gulp.src(['./src/assets/stylus/pages/*.styl'])
+gulp.task('www:stylus:compile:pages', function () {
+  return gulp.src(['./src/www/assets/stylus/pages/*.styl'])
     .pipe(stylus({ 'include css': true }))
     .pipe(gulp.dest('./build/www/css/'));
 });
 
-gulp.task('css:prefix', ['stylus:compile:critical', 'stylus:compile:pages'], function() {
+gulp.task('www:css:prefix', ['www:stylus:compile:critical', 'www:stylus:compile:pages'], function() {
   return gulp.src('./build/www/css/**/*.css')
     .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
     .pipe(gulp.dest('./build/www/css'))
 });
 
-gulp.task('css:minify', ['css:prefix'], function() {
+gulp.task('www:css:minify', ['www:css:prefix'], function() {
   return gulp.src('./build/www/css/**/*.css')
     .pipe(minifyCSS())
     .pipe(gulp.dest('./build/www/css'))
 });
 
-gulp.task('css:inline', ['css:minify'], function() {
+gulp.task('www:css:inline', ['www:css:minify'], function() {
   return gulp.src('./build/www/*.html')
     .pipe(inlinesource())
     .pipe(gulp.dest('./build/www'))
     .pipe(connect.reload());
 });
 
-gulp.task('www:stylus', ['www:jade', 'css:inline']);
+gulp.task('www:stylus', ['www:jade', 'www:css:inline']);

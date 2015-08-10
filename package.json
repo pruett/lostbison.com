@@ -4,10 +4,9 @@
   "description": "not another agency website",
   "scripts": {
     "clean": "rm -rf build/",
-    "posts": "npm run clean; gulp blog:posts",
-    "start": "npm run clean; gulp watch",
-    "predeploy": "npm run clean; gulp",
-    "deploy": "surge -p build/www"
+    "blog": "npm run clean; gulp blog:watch",
+    "www": "npm run clean; gulp www:watch",
+    "www:deploy": "npm run clean; gulp www; surge -p build/www"
   },
   "author": "Kevin Pruett",
   "license": "MIT",

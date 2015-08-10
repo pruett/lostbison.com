@@ -1,0 +1,52 @@
+@import 'mixins/layout'
+@import 'mixins/links'
+
+.GlobalNavigation
+
+//.valign-cell
+  //width: 100%
+
+.gn-links
+  margin: 0
+  padding: 0
+  text-align: center
+  display: table
+  height: 100%
+  width: 100%
+  group()
+
+.gn-links > li
+  list-style: none
+  width: 20%
+  box-sizing: border-box
+  display: inline-block
+  display: table-cell
+  vertical-align: middle
+
+.gn-home-shield
+  svg
+    width: 3rem
+
+.gn-name
+  font-weight: 700
+  font-size: 1rem
+
+.gn-link
+  padding-bottom: 0.25rem
+  font-size: 0.8rem
+  text-transform: uppercase
+  text-decoration: none
+  color: #fff
+  letter-spacing: .0625rem
+  sans-serif()
+
+.GlobalHeader.-light-layout
+  g#BisonLogo
+    fill: #646464
+
+  .gn-link
+    color: #646464
+
+    &:after
+      background: #646464
+

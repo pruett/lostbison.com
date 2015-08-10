@@ -1,0 +1,8 @@
+footer.GlobalFooter
+  .gf-wrapper
+    .gf-logo
+      include _logoLarge
+    ul.gf-links
+      each nav in navItems
+        li
+          a.gf-link._u-link-underline(href=nav.href)= nav.link

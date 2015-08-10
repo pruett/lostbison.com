@@ -5,7 +5,7 @@ var gulp    = require('gulp'),
     jade    = require('gulp-jade');
 
 gulp.task('blog:posts', function() {
-  gulp.src(['./src/blog/posts/*.jade'])
+  gulp.src(['./src/blog/views/posts/*.jade'])
     .pipe(data(function(file) {
       var content = fm(String(file.contents));
       file.contents = new Buffer(content.body);

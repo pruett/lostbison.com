@@ -9,8 +9,8 @@ var gulp       = require('gulp'),
     babelify   = require('babelify'),
     buffer     = require('vinyl-buffer');
 
-gulp.task('www:js', function(done) {
-  glob('./src/www/assets/javascripts/*.js', function(err, files) {
+gulp.task('blog:js', function(done) {
+  glob('./src/blog/assets/javascripts/*.js', function(err, files) {
 
   if(err) done(err);
 
@@ -28,7 +28,7 @@ gulp.task('www:js', function(done) {
       }))
       .pipe(buffer())
       .pipe(uglify())
-      .pipe(gulp.dest('./build/www'));
+      .pipe(gulp.dest('./build/blog'));
     });
     es.merge(tasks).on('end', done);
   });

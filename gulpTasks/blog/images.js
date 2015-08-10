@@ -2,8 +2,8 @@ var gulp     = require('gulp'),
     connect  = require('gulp-connect'),
     imagemin = require('gulp-imagemin');
 
-gulp.task('www:images', function () {
-  return gulp.src(['./src/www/assets/images/**/*'])
+gulp.task('blog:images', function () {
+  return gulp.src(['./src/blog/assets/images/**/*'])
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [
@@ -11,6 +11,6 @@ gulp.task('www:images', function () {
         { cleanupIDs: false }
       ]
     }))
-    .pipe(gulp.dest('./build/www/images'))
+    .pipe(gulp.dest('./build/blog/images'))
     .pipe(connect.reload());
 });

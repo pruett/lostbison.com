@@ -1,0 +1,18 @@
+._u-link-underline
+  position: relative
+
+  &:after
+    content: ''
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
+    height: 1px
+    background: #ffffff
+    opacity: 0
+    transition: all 0.3s
+    transform: scale(0)
+
+  &:hover:after
+    transform: scale(1)
+    opacity: 1

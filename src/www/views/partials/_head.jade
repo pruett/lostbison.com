@@ -4,7 +4,7 @@ meta(name='description', content= www.description)
 meta(name='author', content= www.author)
 meta(name="viewport" content="width=device-width, initial-scale=1")
 
-title= www.title
+title= namespace === 'index' ? www.title : namespace.charAt(0).toUpperCase() + namespace.slice(1) + ' | Lost Bison'
 
 link(rel="stylesheet", type="text/css", href='css/critical/' + namespace + '.css', inline=true)
 
@@ -43,7 +43,7 @@ script#loadcss.
 noscript
   link(href="css/#{namespace}.css" rel="stylesheet")
 
-each favicon in www.favicons
+each favicon in favicons
   link(href="images/favicons/favicon-#{favicon}.png" rel='icon' sizes=favicon type='image/png')
 
 meta(content=www.title property="og:title")

@@ -1,0 +1,49 @@
+@import 'mixins/typography'
+
+a.-general
+  text-decoration: none
+  font-weight: 700
+  color: #B5A2A2
+  border-bottom: 1px solid #B5A2A2
+
+  &:hover
+    background-color: #FFF8F8
+    border-bottom: none
+
+strong
+  font-weight: 700
+
+em, i
+  font-weight: 400
+  font-style: italic
+
+.labelheading
+  sans-serif()
+  color: #a3a3a3
+  font-weight: 700
+  font-size: 0.85rem
+  text-transform: uppercase
+  letter-spacing: 1px
+  margin-bottom: 2rem
+
+  &.-with-dash:before
+    content: '\02014\000A0'
+
+  &.-with-dash:after
+    content: '\000A0\02014'
+
+.subheading
+  sans-serif()
+  font-weight: 700
+  margin-bottom: 1.5rem
+  font-size: 2.55rem
+  line-height: 1
+
+  &.-medium
+    font-size: 2.25rem
+    line-height: 1.2
+
+.citation
+  border-left: 1rem solid #F9F9F9;
+  padding: 0 3%;
+  color: #4c4c4c

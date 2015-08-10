@@ -1,0 +1,17 @@
+.HeroSection
+  padding: 10rem 0
+  box-sizing: border-box
+  color: #ffffff
+  overflow: hidden
+  background-color: #DADADA
+
+  & > .ContentWrapper
+    transform: translateY(10%)
+    visibility: hidden
+    opacity: 0
+    transition: opacity .25s ease-in,transform 0.85s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+
+    &.-anim_appear
+      transform: translateY(0)
+      visibility: visible
+      opacity: 1
