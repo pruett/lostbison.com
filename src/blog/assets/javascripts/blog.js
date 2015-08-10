@@ -2,7 +2,7 @@ import './modules/rAF'
 import utils from './modules/utils'
 
 const header = document.querySelector('[data-hook="getHeader"]');
-const content = document.querySelector('[data-hook="getContent"]');
+const content = document.querySelector('[data-hook="getFeaturedPost"]');
 
 const animateElements = function() {
   requestAnimationFrame(() => utils.addClass(header, '-anim_appear'));

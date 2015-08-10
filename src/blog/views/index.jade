@@ -2,31 +2,37 @@ extends layouts/blog
 
 block vars
   - var namespace = 'index'
-  - var layout = 'light'
 
 block content
-  .ContentWrapper
-    ul.BlogIndex
-      li.bi-item
-        a(href="#")
-          h2.bi-title Blog Title 1
-        p.bi-desc Description here
-        a(href="#")
-          p.bi-readmore Read more
+  section.FeaturedPost
+    .ContentWrapper(data-hook="getFeaturedPost")
+      p featured
+      h2 hello
+      p description
 
-      li.bi-item
-        a(href="#")
-          h2.bi-title Blog Title 1
-        p.bi-desc Description here
-        a(href="#")
-          p.bi-readmore Read more
+  section
+    .ContentWrapper
+      ul.BlogIndex
+        li.bi-item
+          a(href="#")
+            h2.bi-title Blog Title 1
+          p.bi-desc Description here
+          a(href="#")
+            p.bi-readmore Read more
 
-      li.bi-item
-        a(href="#")
-          h2.bi-title Blog Title 1
-        p.bi-desc Description here
-        a(href="#")
-          p.bi-readmore Read more
+        li.bi-item
+          a(href="#")
+            h2.bi-title Blog Title 1
+          p.bi-desc Description here
+          a(href="#")
+            p.bi-readmore Read more
+
+        li.bi-item
+          a(href="#")
+            h2.bi-title Blog Title 1
+          p.bi-desc Description here
+          a(href="#")
+            p.bi-readmore Read more
 
 block scripts
   script(src="js/blog.bundle.js" async)
