@@ -8,9 +8,8 @@ gulp.task('www', [
 ]);
 
 gulp.task('blog', [
-  'blog:stylus',
+  'blog:stylus', // this task compiles jade first
   'blog:js',
   'blog:images',
-  'blog:connect',
   'blog:files'
 ]);
