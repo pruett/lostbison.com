@@ -6,7 +6,8 @@
     "clean": "rm -rf build/",
     "blog": "npm run clean; gulp blog:watch",
     "www": "npm run clean; gulp www:watch",
-    "www:deploy": "npm run clean; gulp www; surge -p build/www"
+    "www:deploy": "npm run clean; gulp www; surge -p build/www",
+    "blog:deploy": "npm run clean; gulp blog; surge -p build/blog"
   },
   "author": "Kevin Pruett",
   "license": "MIT",
