@@ -14,7 +14,8 @@ module.exports = {
     },
     {
       link: 'Blog',
-      href: 'http://blog.lostbison.com'
+      //href: 'http://blog.lostbison.com'
+      href: '/blog'
     }
   ],
   favicons: [

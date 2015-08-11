@@ -9,7 +9,7 @@ html(lang="en")
     include ../partials/_head
   body
     include ../partials/_header
-    main.MainContent(data-hook="getContent")
+    main.MainContent
       h1 #{post.title}
       h2 by #{post.author}
       block content

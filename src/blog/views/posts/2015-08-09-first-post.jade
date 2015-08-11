@@ -1,13 +1,12 @@
 ---
 author: 'Kevin Pruett'
 title: 'My First Post'
-date: "May 28 2015"
 ---
 
-extends ../views/_post
+extends ../layouts/post
 
 block content
   p the date is #{post.date}...
 
-  :markdown
+  :marked
     what a day it was
