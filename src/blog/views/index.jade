@@ -6,33 +6,26 @@ block vars
 block content
   section.FeaturedPost
     .ContentWrapper(data-hook="getFeaturedPost")
-      p featured
-      h2 hello
-      p description
+      each post in posts
+        if post.featured
+          a(href="#{post.dirname}/#{post.basename}")
+            h1!= post.meta.title
+          p by #{post.meta.author}
+          p= post.convertedDate
+
+      code= JSON.stringify(posts)
 
   section
     .ContentWrapper
-      ul.BlogIndex
-        li.bi-item
-          a(href="#")
-            h2.bi-title Blog Title 1
-          p.bi-desc Description here
-          a(href="#")
-            p.bi-readmore Read more
 
-        li.bi-item
-          a(href="#")
-            h2.bi-title Blog Title 1
-          p.bi-desc Description here
-          a(href="#")
-            p.bi-readmore Read more
+      each post in posts
+        unless post.featured
+          a(href="#{post.dirname}/#{post.basename}")
+            h1!= post.meta.title
+          p by #{post.meta.author}
+          p= post.convertedDate
 
-        li.bi-item
-          a(href="#")
-            h2.bi-title Blog Title 1
-          p.bi-desc Description here
-          a(href="#")
-            p.bi-readmore Read more
+      code= JSON.stringify(posts)
 
 block scripts
   script(src="js/blog.bundle.js" async)

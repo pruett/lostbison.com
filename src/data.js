@@ -57,6 +57,7 @@ module.exports = {
   blog: {
     description: "Lost Bison is a collective of digital design and development experts",
     author: "Kevin Pruett",
-    title: "Blog | Lost Bison"
+    title: "Blog | Lost Bison",
+    featuredPost: 'the-most-epic-post'
   }
 }
