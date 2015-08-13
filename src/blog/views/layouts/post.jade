@@ -6,12 +6,14 @@ html(lang="en")
   block vars
 
   head
-    include ../partials/_head
+    include ../partials/_head_post
   body
     include ../partials/_header
     main.MainContent
-      h1 #{post.title}
+      code= JSON.stringify(post)
+      h1!= post.title
       h2 by #{post.author}
+      p= post.convertedDate
       block content
     include ../partials/_footer
     script.

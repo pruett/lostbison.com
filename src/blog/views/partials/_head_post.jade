@@ -4,9 +4,9 @@ meta(name='description', content= blog.description)
 meta(name='author', content= blog.author)
 meta(name="viewport" content="width=device-width, initial-scale=1")
 
-title= blog.title
+title= post.title
 
-link(rel="stylesheet", type="text/css", href='css/critical/index.css', inline=true)
+link(rel="stylesheet", type="text/css", href='css/critical/post.css', inline=true)
 
 script#loadcss.
   function loadCSS( href, before, media, callback ){
@@ -39,17 +39,17 @@ script#loadcss.
     return ss;
   }
 
-  loadCSS("css/index.css", document.getElementById('loadcss'));
+  loadCSS("/css/post.css", document.getElementById('loadcss'));
 noscript
-  link(href="css/index.css" rel="stylesheet")
+  link(href="/css/post.css" rel="stylesheet")
 
 each favicon in favicons
-  link(href="images/favicons/favicon-#{favicon}.png" rel='icon' sizes=favicon type='image/png')
+  link(href="/images/favicons/favicon-#{favicon}.png" rel='icon' sizes=favicon type='image/png')
 
-meta(content=blog.title property="og:title")
-meta(content='http://blog.lostbison.com' property='og:url')
+meta(content=post.title property="og:title")
+meta(content="http://blog.lostbison.com/#{post.dirname}/#{post.basename}" property='og:url')
 meta(content='website' property='og:type')
-meta(content=blog.description property='og:description')
+meta(content=post.description property='og:description')
 meta(content='http://blog.lostbison.com/images/social-share.jpg' property='og:image')
 meta(content='summary_large_image' name='twitter:card')
 meta(content='@pruett' name='twitter:site')

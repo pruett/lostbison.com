@@ -35,13 +35,13 @@ gulp.task('blog:posts', function() {
       file.contents = new Buffer(content.body);
       templateData.post = content.attributes
       templateData.post.convertedDate = moment(postInfo.year+'-'+postInfo.month+'-'+postInfo.day).format('MMM Do, YYYY');
-      templateData.dirname = postInfo.year+'/'+postInfo.month+'/'+postInfo.day;
-      templateData.basename = postInfo.post;
+      templateData.post.dirname = postInfo.year+'/'+postInfo.month+'/'+postInfo.day;
+      templateData.post.basename = postInfo.post;
     }))
     .pipe(jade({ locals: templateData, pretty: false }))
     .pipe(rename(function(path) {
-      path.dirname = templateData.dirname;
-      path.basename = templateData.basename;
+      path.dirname = templateData.post.dirname;
+      path.basename = templateData.post.basename;
     }))
     .pipe(gulp.dest('./build/blog'))
     .pipe(connect.reload());

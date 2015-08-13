@@ -38,7 +38,7 @@ gulp.task('blog:css:minify', ['blog:css:prefix'], function() {
 });
 
 gulp.task('blog:css:inline', ['blog:css:minify'], function() {
-  return gulp.src('./build/blog/*.html')
+  return gulp.src('./build/blog/**/*.html')
     .pipe(inlinesource())
     .pipe(gulp.dest('./build/blog'))
     .pipe(connect.reload());
