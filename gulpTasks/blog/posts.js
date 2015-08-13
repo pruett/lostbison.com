@@ -80,7 +80,8 @@ gulp.task('blog:index', function() {
       allPosts.sort(function(a, b) {
         return new Date(b.dirname).getTime() - new Date(a.dirname).getTime()
       });
-      gutil.log(allPosts);
+
+      blogIndexTemplateData.posts = allPosts;
 
       return gulp.src('./src/blog/views/index.jade')
         .pipe(jade({ locals: blogIndexTemplateData, pretty: false }))
