@@ -1,9 +1,9 @@
 @import 'mixins/typography'
 
 @keyframes gradientSlide
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0%{background-position:0% 0%}
+  50%{background-position:100% 100%}
+  100%{background-position:0% 0%}
 
 .FeaturedPost
   padding: 10rem 0
@@ -12,7 +12,7 @@
   overflow: hidden
   background: #2791C5
   background: linear-gradient(-20deg,#2791C5,#1ADA72,#CEA70A,#DE8949,#FB1C28,#BD3C90)
-  background-size: 1200% 1200%
+  background-size: 800% 800%
   animation: gradientSlide 55s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite
   & > .ContentWrapper
     transform: translateY(10%)
