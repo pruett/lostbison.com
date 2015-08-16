@@ -4,5 +4,9 @@ footer.GlobalFooter
       include _logoLarge
     ul.gf-links
       each nav in www.navItems
-        li
-          a.gf-link._u-link-underline(href="http://lostbison.com#{nav.href}")= nav.link
+        if nav.link === 'Blog'
+          li
+            a.gf-link._u-link-underline(href="/")= nav.link
+        else
+          li
+            a.gf-link._u-link-underline(href="http://lostbison.com#{nav.href}")= nav.link
