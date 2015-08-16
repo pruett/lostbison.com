@@ -1,23 +1,4 @@
 module.exports = {
-  navItems: [
-    {
-      link: 'Philosophy',
-      href: '/philosophy'
-    },
-    {
-      link: 'Team',
-      href: '/team'
-    },
-    {
-      link: 'Build',
-      href: '/build'
-    },
-    {
-      link: 'Blog',
-      //href: 'http://blog.lostbison.com'
-      href: '/blog'
-    }
-  ],
   favicons: [
     '192x192',
     '160x160',
@@ -29,6 +10,24 @@ module.exports = {
   // Website data
 
   www: {
+    navItems: [
+      {
+        link: 'Philosophy',
+        href: '/philosophy'
+      },
+      {
+        link: 'Team',
+        href: '/team'
+      },
+      {
+        link: 'Build',
+        href: '/build'
+      },
+      {
+        link: 'Blog',
+        href: 'http://blog.lostbison.com'
+      }
+    ],
     description: "Lost Bison is a collective of digital design and development experts",
     author: "Kevin Pruett",
     title: "Lost Bison: A remote team of passionate designers and builders",
@@ -55,6 +54,16 @@ module.exports = {
   //Blog data
 
   blog: {
+    navItems: [
+      {
+        link: 'Lost Bison',
+        href: 'http://lostbison.com'
+      },
+      {
+        link: 'Build',
+        href: 'http://lostbison.com/build'
+      }
+    ],
     description: "Lost Bison is a collective of digital design and development experts",
     author: "Kevin Pruett",
     title: "Blog | Lost Bison",

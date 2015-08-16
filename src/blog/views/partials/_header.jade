@@ -2,12 +2,12 @@ header.GlobalHeader(data-hook='getHeader', class={ '-light-layout': layout === '
   .wrapper
     nav(role="nav").GlobalNavigation
       ul.gn-links
-        each nav, index in navItems
-          if (index === 2)
+        each nav, index in blog.navItems
+          if (index === 1)
             li.gn-home-shield
-              a.gn-link.-main(href="http://lostbison.com")
+              a.gn-link.-main(href="/")
                 include _logo
-                h1.gn-name lost bison
+                h1.gn-name lost bison<br>blog
             li.gn-page
               a.gn-link._u-link-underline(href=nav.href)= nav.link
           else

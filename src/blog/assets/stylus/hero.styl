@@ -1,3 +1,5 @@
+@import 'mixins/typography'
+
 @keyframes gradientSlide
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
@@ -12,7 +14,6 @@
   background: linear-gradient(-20deg,#2791C5,#1ADA72,#CEA70A,#DE8949,#FB1C28,#BD3C90)
   background-size: 1200% 1200%
   animation: gradientSlide 55s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite
-
   & > .ContentWrapper
     transform: translateY(10%)
     visibility: hidden
@@ -23,3 +24,45 @@
       transform: translateY(0)
       visibility: visible
       opacity: 1
+
+.fp-label
+  sans-serif()
+  text-transform: uppercase
+  padding: 0.5rem 0.75rem
+  font-size: 0.65rem
+  border: 1px solid #FFF
+  display: inline-block
+  border-radius: 4px
+  font-weight: 700
+  letter-spacing: 0.0625rem
+
+.fp-link
+  text-decoration: none
+
+.fp-title
+  sans-serif()
+  font-size: 3.5rem
+  font-weight: 700
+  letter-spacing: -0.0125rem
+  color: #efefef
+  position: relative
+
+  &:after
+    content: '\02015'
+    position: absolute
+    left: 0
+    bottom: -2rem
+    font-size: 2rem
+    font-weight: 400
+
+  &:hover
+    color: #ffffff
+.fp-author
+  sans-serif()
+  text-transform: uppercase
+  font-weight: 700
+  font-size: 0.85rem
+  letter-spacing: .0625rem
+
+.fp-date
+  playfair()

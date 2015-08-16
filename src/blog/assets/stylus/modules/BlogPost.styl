@@ -1,0 +1,61 @@
+.BlogPost
+  transform: translateY(10%)
+  visibility: hidden
+  opacity: 0
+  transition: opacity .25s ease-in,transform 0.85s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+
+  &.-anim_appear
+    transform: translateY(0)
+    visibility: visible
+    opacity: 1
+
+  a
+    text-decoration: none
+    font-weight: 700
+    color: #B5A2A2
+    border-bottom: 1px solid #B5A2A2
+
+    &:hover
+      background-color: #FFF8F8
+      border-bottom: none
+
+  h3
+    sans-serif()
+    font-size: 1.55rem
+    font-weight: 700
+
+.bp-headline
+  padding-top: 10rem
+  transform: translateY(10%)
+  visibility: hidden
+  opacity: 0
+  transition: opacity .25s ease-in,transform 0.85s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+
+  &.-anim_appear
+    transform: translateY(0)
+    visibility: visible
+    opacity: 1
+
+.bp-title
+  margin-bottom: 1rem
+
+  &:after
+    content: ''
+    display: block
+    height: 1px
+    border-top: solid 1px #CCC
+    width: 30%
+    margin: 1rem auto 2% auto
+
+.bp-byline
+  text-align: center
+
+  .-author
+    sans-serif()
+    text-transform: uppercase
+    font-weight: 700
+    font-size: 0.85rem
+    letter-spacing: .0625rem
+
+  .-date
+    playfair()

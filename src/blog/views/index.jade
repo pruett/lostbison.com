@@ -8,24 +8,29 @@ block content
     .ContentWrapper(data-hook="getFeaturedPost")
       each post in posts
         if post.featured
-          a(href="#{post.dirname}/#{post.basename}")
-            h1!= post.meta.title
-          p by #{post.meta.author}
-          p= post.convertedDate
-
-      code= JSON.stringify(posts)
+          p.fp-label featured post
+          a.fp-link(href="#{post.dirname}/#{post.basename}")
+            h1.fp-title!= post.meta.title
+          if post.meta.excerpt
+            .fp-excerpt= post.meta.excerpt
+          p.fp-meta
+            span.fp-author= post.meta.author
+            |&nbsp;&mdash;&nbsp;
+            span.fp-date= post.convertedDate
 
   section
     .ContentWrapper
 
-      each post in posts
-        unless post.featured
-          a(href="#{post.dirname}/#{post.basename}")
-            h1!= post.meta.title
-          p by #{post.meta.author}
-          p= post.convertedDate
+      if posts.length > 1
+        each post in posts
+          unless post.featured
+            a(href="#{post.dirname}/#{post.basename}")
+              h1!= post.meta.title
+            p by #{post.meta.author}
+            p= post.convertedDate
 
-      code= JSON.stringify(posts)
+      else
+        p More posts on the way&hellip;
 
 block scripts
   script(src="js/blog.bundle.js" async)

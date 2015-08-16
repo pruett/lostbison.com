@@ -7,14 +7,20 @@ html(lang="en")
 
   head
     include ../partials/_head_post
-  body
-    include ../partials/_header
-    main.MainContent
-      code= JSON.stringify(post)
-      h1!= post.title
-      h2 by #{post.author}
-      p= post.convertedDate
-      block content
+  body(itemscope="http://schema.org/Article")
+    article
+      include ../partials/_header
+      main.MainContent
+        section.ContentWrapper.bp-headline(data-hook="getBlogTitle")
+          h1.bp-title.headline.-big.centered!= post.title
+          p.bp-byline
+            span.-author= post.author
+            |&nbsp;&mdash;&nbsp;
+            span.-date= post.convertedDate
+
+        .ContentWrapper.BlogPost(data-hook="getBlogPost")
+          block content
+
     include ../partials/_footer
     script.
       WebFontConfig = { google: { families: [ 'PT Serif:400,700,400italic', 'Source Sans Pro:400,600,700', 'Playfair Display:400,700' ]} };
