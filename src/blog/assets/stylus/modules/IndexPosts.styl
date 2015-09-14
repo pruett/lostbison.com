@@ -1,0 +1,31 @@
+.IndexPosts
+  margin: 0
+  padding: 0
+
+.ip-post
+  list-style: none
+  border-left: 10px solid #F3F3F3
+  padding-left: 1rem
+
+  a
+    text-decoration: none
+    color: #646464
+
+.ip-title
+  font-size: 1.55rem
+
+  &:after
+    content: ' \02192'
+    display: inline
+    transition: transform 0.85s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.15s ease-in
+    visibility: hidden
+    transform: translateX(-0.5rem)
+    opacity: 0
+
+  &:hover
+    color: lighten(#646464, 20%)
+
+    &:after
+      opacity: 1
+      transform: translateX(0)
+      visibility: visible
