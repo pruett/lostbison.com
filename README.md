@@ -42,7 +42,7 @@ This project relies on having [Node.js](https://nodejs.org/en/) installed on you
 
 ## Adding Blog Posts
 
-To add a blog post, create a new file within `src/blog/views/posts`. Create a filename with the following format <YYYY-MM-DD>-title-of-post-separated-by-dashes.jade. **Format matters** as we parse the filename and look for this pattern. An example post filename would look like:
+To add a blog post, create a new file within `src/blog/views/posts`. Create a filename with the following format YYYY-MM-DD-title-of-post-separated-by-dashes.jade. **Format matters** as we parse the filename and look for this pattern. An example post filename would look like:
 
 *2015-12-31-my-new-years-post.jade*
 
